@@ -2,14 +2,14 @@
 
 This project aims to automate the generation of news-style summaries from official Turkish financial disclosures, such as KAP (Public Disclosure Platform) reports. By leveraging state-of-the-art transformer-based models, we convert regulatory financial documents into accessible, journalistic summaries for retail investors.
 
-## 🔍 Project Overview
+## Project Overview
 
 - **Goal**: Transform formal Turkish financial statements into concise and readable news articles.
 - **Domain**: Turkish Capital Markets (Borsa İstanbul - KAP Reports)
 - **Techniques Used**: Abstractive summarization, style transfer, sentiment injection
 - **Language**: Turkish
 
-## 🧠 Models Fine-Tuned
+## Models Fine-Tuned
 
 We experimented with the following transformer architectures:
 
@@ -20,7 +20,7 @@ We experimented with the following transformer architectures:
 | `facebook/mbart-large-cc25` | Pretrained multilingual model across 25 languages                         |
 | Custom Transformer          | Encoder-decoder trained from scratch (used for comparison)                |
 
-## 🧾 Dataset
+## Dataset
 
 - **Size**: 400 KAP report-summary pairs
 - **Structure**:
@@ -29,7 +29,7 @@ We experimented with the following transformer architectures:
 
 All data samples include both factual content and interpretive commentary.
 
-## 🛠️ Methodology
+## Methodology
 
 - Tokenizer: Model-specific (MT5Tokenizer / MBartTokenizer)
 - Summarization Prompt: `"haberleştir: <KAP report text>"`
@@ -44,7 +44,7 @@ All data samples include both factual content and interpretive commentary.
   - Batch size: 4–8
   - Optimizer: AdamW
 
-## 💡 Key Findings
+## Key Findings
 
 - All models successfully adapted to financial tone and style.
 - `mT5-small` yielded the most fluent summaries.
